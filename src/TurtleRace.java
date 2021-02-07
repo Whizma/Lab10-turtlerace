@@ -4,6 +4,8 @@ public class TurtleRace {
 
     public static void main(String[] args) {
 	RaceWindow w = new RaceWindow();
+	int a = 0;
+	ArrayList<RaceTurtle> winnerList = new ArrayList<RaceTurtle>();
 
 	// skapa åtta sköldpaddor och lagra dessa i en arraylist.
 	// kapplöpningen ska ske i samma racewindow
@@ -13,16 +15,28 @@ public class TurtleRace {
 	    turtleList.add(rc);
 
 	}
-	
-	while (turtleList.get(0).getX() < RaceWindow.X_END_POS) {
+	for (int f = 0; f < turtleList.size(); f++) {
+	    while (turtleList.get(f).getX() < RaceWindow.X_END_POS) {
 
-	    for (int i = 0; i < turtleList.size(); i++) {
+		for (int i = 0; i < turtleList.size(); i++) {
 
-		turtleList.get(i).raceStep();
-		RaceWindow.delay(10);
+		    turtleList.get(i).raceStep();
+		    RaceWindow.delay(5);
+		    int turtlePos = turtleList.get(i).getX();
+		    if (turtlePos == RaceWindow.X_END_POS && a < 3) {
+			winnerList.add(turtleList.get(i));
+			a++;
+		    }
+
+		}
 
 	    }
 
+	    }
+	    int b = 1;
+	    for (RaceTurtle t : winnerList) {
+		System.out.println("På plats nummer " + b + " " + t.toString());
+		b++;
 	}
     }
 }
