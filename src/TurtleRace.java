@@ -21,7 +21,7 @@ public class TurtleRace {
 		for (int i = 0; i < turtleList.size(); i++) {
 
 		    turtleList.get(i).raceStep();
-		    RaceWindow.delay(100);
+		    RaceWindow.delay(5);
 		    int turtlePos = turtleList.get(i).getX();
 		    if (turtlePos > RaceWindow.X_END_POS && a <3) {
 			winnerList.add(turtleList.get(i));
@@ -36,7 +36,7 @@ public class TurtleRace {
 	    }
 	    int b = 1;
 	    for (RaceTurtle t : winnerList) {
-		System.out.println("På plats nummer " + b + " " + t.toString());
+		System.out.println("På plats " + b + ": " + t.toString());
 		b++;
 	}
     }
