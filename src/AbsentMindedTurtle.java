@@ -34,7 +34,6 @@ public class AbsentMindedTurtle extends RaceTurtle {
      */
 
     public void raceStep() {
-	randomCompare();
 	if (absentness < randomCompare()) {
 	    super.raceStep();
 	}
