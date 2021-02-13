@@ -21,13 +21,13 @@ public class TurtleRace {
 		    DizzyTurtle dT = new DizzyTurtle(w, i + 1);
 		    turtleList.add(dT);
 		}
-		
+
 		else if (randomTurtle == 1) {
 		    AbsentMindedTurtle amT = new AbsentMindedTurtle(w, i + 1);
 		    turtleList.add(amT);
 		}
-		
-		else { 
+
+		else {
 		    MoleTurtle mT = new MoleTurtle(w, i + 1);
 		    turtleList.add(mT);
 		}
